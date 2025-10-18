@@ -1,51 +1,82 @@
-# 💳 Sistema de Controle Financeiro em Java
+# 💳 Personal Finance Management System
 
-Este é um projeto de sistema de controle financeiro pessoal, desenvolvido em Java. Ele permite o gerenciamento de cartões de crédito, registro de diferentes tipos de compras (à vista, parceladas e recorrentes), geração de faturas e alertas de limite de crédito.
+A console‑based application developed in Java to manage credit cards, track different types of purchases (one‑time, installments, recurring), generate monthly statements and send credit‑limit alerts.
 
-## 📌 Funcionalidades
+## 📌 Features
 
-- ✅ Registro de compras à vista
-- ✅ Registro de compras parceladas
-- ✅ Registro de compras recorrentes (assinaturas)
-- ✅ Geração de fatura mensal detalhada
-- ✅ Definição de data de fechamento da fatura
-- ✅ Alerta de limite do cartão
-- ✅ Menu interativo com retorno automático após cada operação
+- ✅ One‑time purchase registration  
+- ✅ Installment purchase registration  
+- ✅ Recurring purchase registration (e.g., subscriptions)  
+- ✅ Detailed monthly statement generation  
+- ✅ Credit‑card closing‐date configuration  
+- ✅ Credit‑limit alert functionality  
+- ✅ Interactive text‐menu interface with looped operations  
 
-## 🛠 Tecnologias Utilizadas
+## 🛠 Technologies Used
 
-- Java (JDK 8+)
-- Paradigma de Programação Orientada a Objetos
-- Console (modo texto)
+- Java (JDK 8+)  
+- Object‑Oriented Programming  
+- Console / Terminal‐based UI  
+- SQL‑style in‑memory/backed data management (if applicable)  
 
-## 🧩 Estrutura do Projeto
+## 🧩 Project Structure
 
+| File / Class | Responsibility |
+|-------------|----------------|
+| `Main.java` | Entry point of the application |
+| `CartaoCredito.java` | Holds credit‑card data: limit, current balance, list of purchases |
+| `Compra.java` | Abstract base class for purchase types |
+| `CompraAVista.java` | Implements one‑time purchases |
+| `CompraParcelada.java` | Manages purchases split across multiple installments |
+| `CompraRecorrente.java` | Represents monthly recurring payments (subscriptions) |
+| `Fatura.java` | Generates the monthly summary of purchases based on closing date |
+| `Menu.java` | Handles user interaction via terminal menu system |
 
-Cada classe tem uma responsabilidade específica:
+## 🚀 How to Run
 
-- `Main.java`: Ponto de entrada da aplicação.
-- `CartaoCredito.java`: Responsável por armazenar informações do cartão, limite, faturas e compras.
-- `Compra.java`: Classe abstrata base para as diferentes formas de compra.
-- `CompraAVista.java`: Implementa uma compra feita em uma única parcela.
-- `CompraParcelada.java`: Gerencia compras divididas em múltiplas parcelas.
-- `CompraRecorrente.java`: Representa serviços com cobrança mensal fixa.
-- `Fatura.java`: Gera o resumo mensal das compras com base na data de fechamento.
-- `Menu.java`: Interface de interação com o usuário via terminal.
-
-## 🚀 Como Executar
-
-1. Clone o repositório:
+1. Clone the repository  
    ```bash
-   git clone https://github.com/seu-usuario/sistema-financeiro-java.git
+   git clone https://github.com/matheusbaeta/GerenciamentoDeFinancas.git
+   ```  
+2. Navigate into the project folder  
+   ```bash
+   cd GerenciamentoDeFinancas
+   ```  
+3. Compile the Java sources (assuming JDK is installed)  
+   ```bash
+   javac src/*.java
+   ```  
+4. Run the application  
+   ```bash
+   java src.Main
+   ```  
+(Adjust paths as needed depending on your folder structure.)
 
-## Exemplo de Uso
+## 💡 Usage Example
+
+```text
 ======= MENU =======
-1. Registrar compra à vista
-2. Registrar compra parcelada
-3. Registrar compra recorrente
-4. Gerar fatura atual
-5. Ver limite disponível
-6. Sair
+1. Register one‑time purchase  
+2. Register installment purchase  
+3. Register recurring purchase  
+4. Generate current invoice  
+5. View available credit limit  
+6. Exit  
 =====================
-Escolha uma opção:
+Choose an option:
+```
 
+## 🧭 Future Improvements
+
+- [ ] Add persistent data storage (e.g., file system, SQLite, or other DB) to retain data across runs  
+- [ ] Add user account support (multi‑card/multi‑user)  
+- [ ] Add a GUI (Swing / JavaFX) version for improved usability  
+- [ ] Add detailed analytics (e.g., monthly spending breakdown, category filtering)  
+- [ ] Add unit tests and continuous integration  
+- [ ] Add input validation, error‑handling and a richer UI menu experience  
+
+## 📝 License
+
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
+---
